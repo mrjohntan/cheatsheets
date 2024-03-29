@@ -76,3 +76,9 @@ sudo yum install npm -y
 # Setup dotnet
 
 sudo yum install dotnet-sdk-8.0 -y
+
+# Setup Helm
+
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
