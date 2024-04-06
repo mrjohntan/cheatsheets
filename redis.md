@@ -13,6 +13,8 @@ sudo apt-get install redis
 
 helm install redis -n default --set architecture=standalone oci://registry-1.docker.io/bitnamicharts/redis
 
+helm install redis -n default --set architecture=standalone --set auth.password="P@ssw0rd" oci://registry-1.docker.io/bitnamicharts/redis
+
 Pulled: registry-1.docker.io/bitnamicharts/redis:19.0.1
 Digest: sha256:46f3a93a617fe836cdb8d11220b38d2231e023222f1b535b3510e58775bf4e57
 NAME: redis
@@ -70,3 +72,5 @@ jt@lab:~$ ps -ef|grep port-forward
 jt         27692    5685  0 09:24 pts/0    00:00:00 grep --color=auto port-forward
 
 kill -9 27692
+
+export REDIS_OM_URL=redis://default:P@ssw0rd@localhost:6379
